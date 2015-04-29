@@ -1,0 +1,11 @@
+{
+  "name": "jeremyjcullen.com",
+  "ignore": [
+    "**/.*",
+    "libs"
+  ],
+  "dependencies": {
+    "react": "~0.13.2",
+    "skeleton": "~2.0.4"
+  }
+}
