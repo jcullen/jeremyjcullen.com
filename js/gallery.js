@@ -58,12 +58,13 @@ var gallerySlider = React.createClass({
     var gallerySlides = this.props.images.map(function(image, index) {
       slideClasses.past = index < this.props.currentSlide ? true : false;
       slideClasses.future = index > this.props.currentSlide ? true : false;
+      // Lazy load images within 3 of current
       return React.createElement('div', {
           key: index,
           className: this.classConcat(slideClasses)
         },
         React.createElement('img', {
-          src: image
+          src: Math.abs(this.props.currentSlide - index) <= 3 ? image : ''
         }));
     }.bind(this));
     return React.createElement('div', {
