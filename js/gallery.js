@@ -72,11 +72,11 @@ var gallerySlider = React.createClass({
       }, gallerySlides,
       React.createElement('div', {
         className: 'prev',
-        onClick: this.handleClickNext
+        onClick: this.handleClickPrevious
       }),
       React.createElement('div', {
         className: 'next',
-        onClick: this.handleClickPrevious
+        onClick: this.handleClickNext
       }),
       React.createElement('div', {
         className: 'close',
@@ -84,10 +84,10 @@ var gallerySlider = React.createClass({
       }));
   },
   handleClickNext: function() {
-    this.props.selectSlide(this.props.currentSlide - 1);
+    this.props.selectSlide(this.props.currentSlide + 1);
   },
   handleClickPrevious: function() {
-    this.props.selectSlide(this.props.currentSlide + 1);
+    this.props.selectSlide(this.props.currentSlide - 1);
   },
   handleClickClose: function() {
     this.props.closeGallery();
